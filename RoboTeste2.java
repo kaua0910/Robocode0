@@ -34,10 +34,10 @@ public class RoboTeste2 extends AdvancedRobot
 ajusteRadar=Utils.normalRelativeAngle(anguloInimigo-getRadarHeadingRadians());setTurnRadarRightRadians(ajusteRadar);
 		
 		double distancia = e.getDistance();
-			if (distancia < 100){
+			if (distancia < 200){
     			setFire(3);
 			}
-			else if (distancia < 300) {
+			else if (distancia < 600) {
     			setFire(2);
 			}
 			else {
@@ -45,9 +45,9 @@ ajusteRadar=Utils.normalRelativeAngle(anguloInimigo-getRadarHeadingRadians());se
 			}
         execute();
         // Atira quando estiver alinhado
-        if (Math.abs(getGunTurnRemaining()) < 5) {
-            fire(2);
-		}
+        //if (Math.abs(getGunTurnRemaining()) < 5) {
+           // fire(2);
+		//}
 	}
 
 	//Quando atingido
@@ -61,7 +61,7 @@ ajusteRadar=Utils.normalRelativeAngle(anguloInimigo-getRadarHeadingRadians());se
 	//Quando acertar uma parede
 	public void onHitWall(HitWallEvent e) {
 		setBack(20);
-		setTurnRight(90);
+		setTurnRight(70);
 		execute();
 	}	
 }
